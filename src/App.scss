@@ -1,0 +1,280 @@
+$shadow-color-2: rgba(255, 69, 0, 0.5);
+$shadow-color-3: rgba(0, 191, 255, 0.5);
+$shadow-color-1: rgba(128, 0, 128, 0.7);
+$bg-color: rgba(5, 5, 30, 1);
+$gradient-color-start: #ff8c55; // Example gradient start color
+$gradient-color-end: #ff0055; // Example gradient end color
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $bg-color;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./Assets/lights.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(120%);
+    z-index: 1;
+  }
+}
+
+.full-background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .text {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10rem;
+
+    h1 {
+      font-size: 4rem;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      background-clip: text;
+      background-image: linear-gradient(
+        color(display-p3 0.941176 0.933333 0.976471 / 0.8) 0%,
+        color(display-p3 0.886275 0.909804 1) 100%
+      );
+      box-sizing: border-box;
+      color: rgba(0, 0, 0, 0);
+      font-family: Onest, system-ui, -apple-system, "system-ui", "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+      font-size: 72px;
+      font-weight: 500;
+      height: 80px;
+      letter-spacing: -1.44px;
+      line-height: 80px;
+      text-align: center;
+      width: 852.195px;
+      -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    }
+
+    span {
+      background-clip: text;
+      background-image: linear-gradient(
+        135deg,
+        color(display-p3 0.619608 0.478431 1) 0%,
+        color(display-p3 0.996078 0.545098 0.733333) 33.33%,
+        color(display-p3 1 0.741176 0.478431) 66.67%,
+        color(display-p3 0.972549 0.917647 0.764706) 100%
+      );
+      box-sizing: border-box;
+      color: rgba(0, 0, 0, 0);
+      display: inline;
+      font-family: Onest, system-ui, -apple-system, "system-ui", "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+      font-size: 72px;
+      font-weight: 500;
+      height: auto;
+      letter-spacing: -1.44px;
+      line-height: 80px;
+      text-align: center;
+      width: auto;
+      -webkit-text-fill-color: rgba(0, 0, 0, 0);
+      animation: animateGradient 10s infinite linear;
+      background-size: 200% auto;
+    }
+
+    @keyframes animateGradient {
+      0%,
+      100% {
+        background-position: left;
+      }
+      50% {
+        background-position: right;
+      }
+    }
+
+    .custom-button {
+        position: relative;
+        align-self: center;
+        background-color: rgba(0, 0, 0, 0);
+        background-image: linear-gradient(
+          135deg,
+          color(display-p3 0.572549 0.415686 1) 0%,
+          color(display-p3 1 0.466667 0.690196) 50%,
+          color(display-p3 1 0.701961 0.403922) 100%
+        );
+        border-radius: 8px;
+        border: none;
+        box-sizing: border-box;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        display: inline-block;
+        font: 500 16px/24px "Inter V", system-ui, -apple-system, sans-serif;
+        padding: 10px 20px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        text-transform: none;
+        transition: transform 0.2s cubic-bezier(0.6, 0.6, 0, 1),
+          margin-top 0.2s cubic-bezier(0.6, 0.6, 0, 1);
+        width: 9rem;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .custom-button:hover::before {
+        transform: translateX(100%);
+      }
+    
+  }
+  .behind-stars {
+    background-image: url("./Assets/behind-stars.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    left: -1rem;
+    position: absolute;
+    top: 12rem;
+
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      mask-image: url("./Assets/stars.png");
+      mask-size: cover;
+      width: 83.5rem;
+      height: 44.125rem;
+      display: flex;
+      justify-content: space-between;
+      z-index: 1;
+
+      div {
+        animation: hero-background-dot 10s infinite cubic-bezier(0.6, 0.6, 0, 1);
+        background-image: linear-gradient(
+          135deg,
+          rgba(158, 122, 255, 1),
+          rgba(255, 140, 193, 1),
+          rgba(255, 189, 122, 1),
+          rgba(248, 234, 196, 1)
+        );
+        color: #fff;
+        height: 25rem;
+        width: 16.125rem;
+        transform: translateY(100%);
+      }
+
+      @keyframes hero-background-dot {
+        0% {
+          transform: translateY(100%);
+        }
+        100% {
+          transform: translateY(0%);
+        }
+      }
+    }
+  }
+
+  .circles {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .circle-1,
+    .circle-2,
+    .circle-3 {
+      position: absolute;
+      width: 62.5rem;
+      height: 62.5rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: linear-gradient(
+          to top,
+          transparent 80%,
+          rgba(255, 255, 255, 0.05) 100%
+        );
+      }
+
+      .spinner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    .circle-1 {
+      bottom: -40%;
+    }
+
+    .circle-2 {
+      bottom: -65%;
+
+      .spinner {
+        box-shadow: 0rem 6.25rem 6.25rem -6.875rem $shadow-color-1,
+          0rem 3.125rem 6.25rem -6.875rem $shadow-color-2,
+          0rem 3.125rem 6.25rem -6.875rem $shadow-color-3;
+        animation: spin-reversed 10s infinite linear;
+      }
+    }
+
+    .circle-3 {
+      bottom: -85%;
+
+      .spinner {
+        box-shadow: 0rem 6.25rem 6.25rem -6.875rem $shadow-color-1,
+          0rem 3.125rem 6.25rem -6.875rem $shadow-color-2,
+          0rem 3.125rem 6.25rem -6.875rem $shadow-color-3;
+        animation: spin 10s infinite linear;
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin-reversed {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+  }
+}

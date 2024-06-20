@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Stars from './Assets/stars.png';
+import BehindStars from './Assets/behind-stars.png';
+import './App.scss';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="full-background">
+      <div className="text">
+        <h1>Dimension is the new
+          <span>standard for collaboration</span>
+        </h1>
+        <button className="custom-button">
+          Join Waitlist
+          <div class="frames">
+            <div class="frame">
+            </div>
+            <div class="frame">
+            </div>
+            <div class="frame">
+            </div>
+          </div>
+        </button>
+      </div>
+      <div className="behind-stars">
+        <div className="stars">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div className="circles">
+        <div className="circle-1">
+          <div className="background"></div>
+        </div>
+        <div className="circle-2">
+          <div className="background"></div>
+          <div className="spinner inner-reversed"></div>
+        </div>
+        <div className="circle-3">
+          <div className="background"></div>
+          <div className="spinner inner"></div>
+        </div>
+      </div>
     </div>
   );
 }
