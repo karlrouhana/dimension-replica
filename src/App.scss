@@ -2,8 +2,8 @@ $shadow-color-2: rgba(255, 69, 0, 0.5);
 $shadow-color-3: rgba(0, 191, 255, 0.5);
 $shadow-color-1: rgba(128, 0, 128, 0.7);
 $bg-color: rgba(5, 5, 30, 1);
-$gradient-color-start: #ff8c55; // Example gradient start color
-$gradient-color-end: #ff0055; // Example gradient end color
+$gradient-color-start: #ff8c55;
+$gradient-color-end: #ff0055;
 
 * {
   box-sizing: border-box;
@@ -27,7 +27,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(120%);
+    filter: brightness(150%);
     z-index: 1;
   }
 }
@@ -111,40 +111,8 @@ body {
         background-position: right;
       }
     }
+  } // End Text Div
 
-    .custom-button {
-        position: relative;
-        align-self: center;
-        background-color: rgba(0, 0, 0, 0);
-        background-image: linear-gradient(
-          135deg,
-          color(display-p3 0.572549 0.415686 1) 0%,
-          color(display-p3 1 0.466667 0.690196) 50%,
-          color(display-p3 1 0.701961 0.403922) 100%
-        );
-        border-radius: 8px;
-        border: none;
-        box-sizing: border-box;
-        color: rgb(255, 255, 255);
-        cursor: pointer;
-        display: inline-block;
-        font: 500 16px/24px "Inter V", system-ui, -apple-system, sans-serif;
-        padding: 10px 20px;
-        position: relative;
-        text-align: center;
-        text-decoration: none;
-        text-transform: none;
-        transition: transform 0.2s cubic-bezier(0.6, 0.6, 0, 1),
-          margin-top 0.2s cubic-bezier(0.6, 0.6, 0, 1);
-        width: 9rem;
-        -webkit-font-smoothing: antialiased;
-      }
-
-      .custom-button:hover::before {
-        transform: translateX(100%);
-      }
-    
-  }
   .behind-stars {
     background-image: url("./Assets/behind-stars.png");
     background-size: cover;
@@ -169,7 +137,7 @@ body {
       z-index: 1;
 
       div {
-        animation: hero-background-dot 10s infinite cubic-bezier(0.6, 0.6, 0, 1);
+        animation: hero-background-dot 15s infinite cubic-bezier(0.6, 0.6, 0, 1);
         background-image: linear-gradient(
           135deg,
           rgba(158, 122, 255, 1),
@@ -178,9 +146,8 @@ body {
           rgba(248, 234, 196, 1)
         );
         color: #fff;
-        height: 25rem;
+        height: 100%;
         width: 16.125rem;
-        transform: translateY(100%);
       }
 
       @keyframes hero-background-dot {
@@ -188,11 +155,11 @@ body {
           transform: translateY(100%);
         }
         100% {
-          transform: translateY(0%);
+          transform: translateY(-100%);
         }
       }
     }
-  }
+  } // End Behind The Stars Div
 
   .circles {
     position: relative;
@@ -220,8 +187,8 @@ body {
         border-radius: 50%;
         background: linear-gradient(
           to top,
-          transparent 80%,
-          rgba(255, 255, 255, 0.05) 100%
+          transparent 85%,
+          rgba(255, 255, 255, 0.07) 100%
         );
       }
 
@@ -276,5 +243,11 @@ body {
         transform: rotate(-360deg);
       }
     }
+  } // End Circles Div
+
+  @keyframes spinner-rotate {
+    100% {
+      transform: rotate(1turn);
+    }
   }
-}
+} // End Full Background Div

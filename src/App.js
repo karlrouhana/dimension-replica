@@ -10,17 +10,6 @@ const App = () => {
         <h1>Dimension is the new
           <span>standard for collaboration</span>
         </h1>
-        <button className="custom-button">
-          Join Waitlist
-          <div class="frames">
-            <div class="frame">
-            </div>
-            <div class="frame">
-            </div>
-            <div class="frame">
-            </div>
-          </div>
-        </button>
       </div>
       <div className="behind-stars">
         <div className="stars">
